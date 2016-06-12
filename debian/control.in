@@ -7,8 +7,8 @@ Standards-Version: 3.9.1
 Homepage: https://github.io/pgq
 
 Package: postgresql-PGVERSION-pgq-node
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, postgresql-PGVERSION, postgresql-PGVERSION-pgq
+Architecture: all
+Depends: ${misc:Depends}, postgresql-PGVERSION, postgresql-PGVERSION-pgq
 Conflicts: postgresql-PGVERSION-pgq3
 Description: Cascaded queueing on top of PgQ
  PostgreSQL extension that provider queue node registration
