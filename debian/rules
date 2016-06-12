@@ -33,11 +33,10 @@ genfiles:
 	rm -f debian/control
 	rm -rf debian/postgresql-*
 	set -e; for ver in $(PG_VERSIONS); do \
-		mod=pgq; xmod=pgq; \
+		xmod=pgq-node; \
 		dst="debian/postgresql-$${ver}-$${xmod}.install"; \
 		echo "usr/share/postgresql/$${ver}/extension" > "$${dst}"; \
 		echo "usr/share/postgresql/$${ver}/contrib" >> "$${dst}"; \
-		echo "usr/lib/postgresql/$${ver}/lib" >> "$${dst}"; \
 	done
 	$(PG_BUILDEXT) updatecontrol
 
