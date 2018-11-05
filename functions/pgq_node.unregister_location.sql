@@ -21,7 +21,7 @@ returns record as $$
 -- Return Codes:
 --      200 - Ok
 --      301 - Location not found
---      403 - Cannot drop nodes own or parent location
+--      403 - Cannot drop node's own or parent location
 -- ----------------------------------------------------------------------
 declare
     _queue_name  text;
@@ -39,11 +39,11 @@ begin
         where n.queue_name = i_queue_name;
     if found then
         if node.node_name = i_node_name then
-            select 403, 'Cannot drop nodes own location' into ret_code, ret_note;
+            select 403, 'Cannot drop node's own location' into ret_code, ret_note;
             return;
         end if;
         if node.provider_node = i_node_name then
-            select 403, 'Cannot drop location of nodes parent' into ret_code, ret_note;
+            select 403, 'Cannot drop location of node's parent' into ret_code, ret_note;
             return;
         end if;
     end if;
