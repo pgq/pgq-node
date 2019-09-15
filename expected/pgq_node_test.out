@@ -1,3 +1,4 @@
+\set VERBOSITY 'terse'
 select * from pgq_node.register_location('aqueue', 'node1', 'dbname=node1', false);
  ret_code |      ret_note       
 ----------+---------------------
