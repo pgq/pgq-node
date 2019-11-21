@@ -1,3 +1,9 @@
+pgq-node (3.3-1) unstable; urgency=low
+
+  * v3.3
+
+ -- Marko Kreen <markokr@gmail.com>  Thu, 21 Nov 2019 19:48:00 +0200
+
 pgq-node (3.2.5-1) unstable; urgency=low
 
   * v3.2.5

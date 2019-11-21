@@ -25,3 +25,8 @@ pgq_node.sql
 pgq_node.upgrade.sql
 
 results/
+
+docs/Data
+docs/html
+docs/sql
+
