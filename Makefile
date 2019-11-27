@@ -1,7 +1,7 @@
 
 EXTENSION = pgq_node
 
-EXT_VERSION = 3.3
+EXT_VERSION = 3.3.1
 EXT_OLD_VERSIONS = 3.2 3.2.5
 
 Extension_regress = pgq_node_init_ext   pgq_node_test
