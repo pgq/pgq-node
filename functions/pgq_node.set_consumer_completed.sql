@@ -27,7 +27,7 @@ begin
      where queue_name = i_queue_name
        and consumer_name = i_consumer_name;
     if found then
-        select 100, 'Consumer ' || i_consumer_name || ' compleded tick = ' || i_tick_id::text
+        select 100, 'Consumer ' || i_consumer_name || ' completed tick = ' || i_tick_id::text
             into ret_code, ret_note;
     else
         select 404, 'Consumer not known: '
