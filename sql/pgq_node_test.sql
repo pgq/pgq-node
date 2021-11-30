@@ -94,6 +94,8 @@ select * from pgq_node.register_location('mqueue', 'node2', 'dbname=node2', fals
 select * from pgq_node.register_location('mqueue', 'node3', 'dbname=node3', false);
 select * from pgq_node.create_node('mqueue', 'leaf', 'node2', 'node2_worker', 'node1', 13, 'aqueue');
 select * from pgq_node.get_worker_state('mqueue');
+select * from pgq_node.get_node_info('mqueue');
+select * from pgq_node.get_node_info('aqueue');
 
 select * from pgq_node.drop_node('asd', 'asd');
 select * from pgq_node.drop_node('mqueue', 'node3');

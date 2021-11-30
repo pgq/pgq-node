@@ -20,7 +20,9 @@ create or replace function pgq_node.get_node_info(
     out worker_paused bool,
     out worker_uptodate bool,
     out worker_last_tick bigint,
-    out node_attrs text
+    out node_attrs text,
+
+    out target_for text[]
 ) returns record as $$
 -- ----------------------------------------------------------------------
 -- Function: pgq_node.get_node_info(1)
@@ -79,6 +81,14 @@ begin
              order by 1 desc
              limit 1;
         end if;
+
+        select array_agg(x.queue_name) into target_for
+          from (
+            select q.queue_name
+              from pgq_node.node_info q
+             where q.combined_queue = i_queue_name
+             order by q.queue_name
+          ) x;
     else
         local_watermark := worker_last_tick;
     end if;
